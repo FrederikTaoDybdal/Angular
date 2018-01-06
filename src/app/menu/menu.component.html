@@ -15,7 +15,7 @@
       
       
 
-      <md-grid-tile *ngFor="let dish of dishes" (click) = "onSelect(dish)">
+    <md-grid-tile *ngFor="let dish of dishes" [routerLink]="['/dishdetail', dish.id]">
 
         <img height="200px" src={{dish.image}} alt={{dish.name}}>
         <md-grid-tile-footer>
@@ -26,6 +26,6 @@
   </div>
 
 
- <app-dishdetail [dish] = "selectedDish"></app-dishdetail>
+<!--  <app-dishdetail [dish] = "selectedDish"></app-dishdetail> -->
 
 </div>
