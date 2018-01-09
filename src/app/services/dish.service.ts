@@ -32,8 +32,14 @@ export class DishService {
     });
   }
 
-   getDishIds(): Observable<number[]> {
-    return Observable.of(DISHES.map(dish => dish.id ));
+   getDishIds(): Promise<number[]> {
+
+
+     return  new Promise(resolve=> {
+      // Simulate server latency with 2 second delay
+      setTimeout(() => resolve(DISHES.map((dish) => dish.id)), 1000);
+    });
   }
+   
   
 }
