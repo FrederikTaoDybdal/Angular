@@ -9,7 +9,7 @@
     </div>
   </div>
 
-  <div fxFlex>
+  <div fxFlex *ngIf="dishes">
     <md-grid-list cols="2" rowHeight="200px">
 
       
@@ -26,6 +26,10 @@
   </div>
 
 
-<!--  <app-dishdetail [dish] = "selectedDish"></app-dishdetail> -->
+ </div>
+  <div [hidden]="dishes">
+    <md-spinner></md-spinner><h4>Loading . . . Please Wait</h4>
+ 
 
-</div>
+    </div>
+ 
